@@ -1,0 +1,43 @@
+.mat-expansion-panel-header{
+}
+
+.mat-expansion-panel {
+    background-color: white !important;
+    color: black !important;
+    margin: 0 2rem;
+}
+.mat-expansion-panel-header-title {
+    color: #000;
+}
+
+.pagination {
+    
+}
+
+.mat-accordion{
+    
+}
+
+.mat-expansion-panel-header {
+    color: black !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label{
+    color: black !important; 
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: black !important;
+}
+::ng-deep .mat-expansion-indicator::after{
+    color: black !important;
+}
+
+::ng-deep .mat-raised-button.mat-primary[disabled]{
+    background-color: #ea97b8;
+    color: white !important;
+
+}
+::ng-deep .mat-raised-button.mat-primary {
+    background-color: #c2185b;
+}
