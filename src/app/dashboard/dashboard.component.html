@@ -66,6 +66,7 @@
       <th scope="col" >Country</th>
       <th scope="col" >Area</th>
       <th scope="col" >Population</th>
+      <th scope="col" >Action </th>
     </tr>
     </thead>
     <tbody>
@@ -75,6 +76,12 @@
       </td>
       <td><ngb-highlight [result]="country.area" ></ngb-highlight></td>
       <td><ngb-highlight [result]="country.population" ></ngb-highlight></td>
+      <td><a href="javaScript:void(0);" style="margin: 5px;">
+          <i class="fa fa-edit" (click)="click(country)"></i>
+          </a>
+          <a href="javaScript:void(0);" style="margin: 5px;">
+          <i class="fa fa-trash" (click)="click(country)"></i>
+      </a></td>
     </tr>
     </tbody>
   </table>

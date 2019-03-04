@@ -51,13 +51,18 @@ export class DashboardComponent implements OnInit {
 
   resetForm = (edit?) => {
     this.addNewForm = new FormGroup({
-      "in1": new FormControl(""),
-      "in2": new FormControl(""),
-      "in3": new FormControl(""),
-      "in4": new FormControl(""),
-      "in5": new FormControl("")
+      "in1": new FormControl(edit? edit.area:'',[]),
+      "in2": new FormControl(edit? edit.in2:'',[]),
+      "in3": new FormControl(edit? edit.in3:'',[]),
+      "in4": new FormControl(edit? edit.in4:'',[]),
+      "in5": new FormControl(edit? edit.in5:'',[])
       
     })
+  }
+
+  click(event){
+    console.log(event);
+    this.resetForm(event);
   }
 
 }
