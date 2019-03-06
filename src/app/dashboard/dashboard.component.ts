@@ -62,7 +62,7 @@ export class DashboardComponent implements OnInit {
       "in3": new FormControl(edit? edit.in3:'',[]),
       "in4": new FormControl(edit? edit.in4:'',[]),
       "in5": new FormControl(edit? edit.in5:'',[]),
-      "date": new FormControl(edit? _moment(edit.date):'',[])
+      "date": new FormControl(edit? new Date(edit.date):'',[])
       
     })
   }
@@ -70,7 +70,7 @@ export class DashboardComponent implements OnInit {
   click(event){
     //console.log(_moment(event.date).format("MMM Do YY"));
     console.log(event);
-    event.date = _moment().toLocaleString();
+    event.date = _moment().toISOString();
     //console.log(_moment(event.date).format("MMM Do YY"));
     this.resetForm(event);
   }
