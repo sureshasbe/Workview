@@ -36,6 +36,13 @@
                       <input matInput placeholder="Input" formControlName="in5" autocomplete="off" required>
                     </mat-form-field>
               </mat-grid-tile>
+              <mat-grid-tile>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Date" formControlName="date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+              </mat-grid-tile>
               
                   
              <!-- <mat-grid-tile>

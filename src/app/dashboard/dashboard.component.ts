@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
+
+import * as _moment from 'moment';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -37,32 +41,39 @@ export class DashboardComponent implements OnInit {
   onSubmit = (formData) => {
     if(formData.valid){
       console.log(formData.value);
-      this.dashService.addData(formData.value).subscribe((data) => {
+      console.log(_moment(formData.date).format("MMM Do YY"));// use any format u want
+     /* this.dashService.addData(formData.value).subscribe((data) => {
         this.resetForm();
         this.getDataList();
       },
       (err)=> {
         console.log(err);
         this.resetForm();
-      });
+      });*/
       
     }
   }
 
   resetForm = (edit?) => {
+    console.log(edit);
     this.addNewForm = new FormGroup({
       "in1": new FormControl(edit? edit.area:'',[]),
       "in2": new FormControl(edit? edit.in2:'',[]),
       "in3": new FormControl(edit? edit.in3:'',[]),
       "in4": new FormControl(edit? edit.in4:'',[]),
-      "in5": new FormControl(edit? edit.in5:'',[])
+      "in5": new FormControl(edit? edit.in5:'',[]),
+      "date": new FormControl(edit? _moment(edit.date):'',[])
       
     })
   }
 
   click(event){
+    //console.log(_moment(event.date).format("MMM Do YY"));
     console.log(event);
+    event.date = _moment().toLocaleString();
+    //console.log(_moment(event.date).format("MMM Do YY"));
     this.resetForm(event);
   }
+
 
 }
